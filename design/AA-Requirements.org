@@ -1,0 +1,174 @@
+#+TITLE: Software Requirements
+#+SUBTITLE: Audible Adventure
+#+AUTHOR: Daniel Birket
+#+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LATEX_HEADER: \usepackage{parskip}
+#+OPTIONS: toc:nil
+#+begin_abstract
+This document specifies the general requirements of a program to allow
+a user to play an "Adventure" game like the classic "Colossal Cave
+Adventure", but with a hybrid audible and textual interface and with
+particular attention to its accessibility by visually-impaired and
+blind users.
+#+end_abstract
+
+* Introduction
+
+"[[https://en.wikipedia.org/wiki/Colossal_Cave_Adventure][Colossal Cave Adventure]]", also known as "Adventure" or "ADVENT" was
+written in FORTRAN in 1976 by Will Crowther and expanded in 1977 by
+Don Woods.  It spawned many versions and derivatives in many languages
+and on many platforms and is still played today.  It is the archetype
+of the entire "Adventure" game genre, including this one.
+
+The primary goal of this project is to create a game engine and game
+script that provides an experience similar to the original "Adventure",
+but with added audible elements and with particular attention to its
+accessibility by vision-impaired and blind users.  It will not be a
+"video game" and will not require sight to play and enjoy.
+
+This project was proposed by Daniel Birket, a software engineer of
+forty years experience, as a joint project with his friend, Lawrence
+Perez, a music composer, audio artist and student programmer, as a fun
+and worthwhile endeavor benefiting them both and hopefully
+entertaining others.
+
+* Project Goals
+
+The creation of an audible "Adventure" game is only part of the reason
+for this project.  The project should try to meet the following goals:
+
+- It should provide both partners with practice programming in the
+  "Python" language, including the use of libraries for:
+
+  - Text to Speech
+
+  - Speed Recognition
+
+  - Music and Audio Playback
+
+  - Human Readable Data Languages like "YAML"
+
+- It should provide practice in designing and implementing an
+  accessible program and accessible web site about that program.
+
+- It should provide Lawrence with some fun and:
+
+  - an outlet for his talents of music composition, performance and
+    audio engineering.
+
+  - experience with software design techniques and tools, including:
+
+    - Git version control.
+
+    - Static web site tools.
+
+    - Code documentation
+
+  - a public project for his professional and creative résumé.
+
+- It should provide Daniel with some fun and:
+
+  - an outlet for his penchant to teach and learn about software.
+
+  - a focus and purpose for his spare time, separate from his "day job".
+
+- It should provide others with an opportunity to create and
+  contribute to an interesting and fun open-source project.
+
+As creating a playable and enjoyable game, not just a game engine,
+will require talent and experience in game design (which I currently
+lack) I hope to eventually enlist the help of another collaborator to
+help create a game script that others will want to play.  Perhaps, if
+the game engine is good enough, more people will want to create other
+game scripts for it.
+
+* Program Requirements
+
+The program must meet the following requirements:
+
+- It must be written primarily in the "Python" programming language,
+  as that language is well suited to both learning and production of a
+  professional product and is compatible with a range of platforms.
+  
+- It must be open-source with a copy-left license.
+
+- It must be playable by sighted, visually-impaired and blind users
+  without requiring a screen reader or familiarity with one, via an
+  audio interface similar to scene description of a radio drama.
+
+- It must be playable by hearing, hearing-impaired and deaf users via
+  a textual interface similar to closed-captioning of a radio drama.
+
+- The textual and audible interfaces must run in parallel, with an
+  option to suppress either text or audio.
+
+- The primary channel of input from the user must be text, like text
+  chat.  A chat interface may be a good design choice for this, perhaps
+  presented as a conversation with the player's avatar.
+
+- It must not use a significantly graphical interface or require
+  vision to easily use.
+
+- It must not require graphical elements.  It may include static or
+  animated graphics (small pictures) for the benefit of hearing
+  impaired or deaf users when the textual interface cannot adequately
+  parallel the audio experience.
+
+- It must not require video elements.  It may include video collage
+  (speech and/or audio with accompanying stock video or slides)
+  elements provided that the primary presentation remains textual and
+  audio and the visual information is not required to use and enjoy
+  the game.
+
+- The text interface must support international languages and
+  characters, including emoticons.
+
+- It must run on Linux and Unix platforms, including MacOS and
+  Raspberry Pi, that support Python and the necessary libraries and
+  facilities.  It may run on Windows and smart-phones.
+
+- It must be well documented so that others can create game scripts
+  for the engine, contribute to the project, or fork and extend the
+  engine and game(s).
+
+- Game scripts must be in a human readable and writable format.
+
+- The audible interface must support multiple or mixed channels of
+  audio for various purposes.
+
+- Game scripts must support both audible and text assets, including:
+
+  - Music for scene ambiance or audio-interface elements.
+
+  - Scene ambient sounds.  Examples: swamp with frogs, cave with water
+    dripping.
+
+  - Object sounds.  Examples: clock ticking, mystic humming, motor
+    running.
+
+  - Foley action sounds (examples, footsteps, running, unlocking door,
+    opening door, falling rocks, motorcycle travel, barking,
+    breathing).
+
+  - Voice acting for character dialog, NPC exposition, NPC
+    interactions.
+
+  - Textual scene, character, and object descriptions.
+
+  - Textual close-captioning of all speech, music, and sound.
+
+- The format must be _interactive_, not linear, fiction, where the
+  story unfolds as determined by the actions of the player.
+
+* Program Goals
+
+The program should try to meet the following goals:
+
+- It should be enjoyable to sighted, hearing, visually impaired,
+  hearing impaired, deaf, and blind users.
+
+- It should support speech recognition on platforms that provide that
+  facility.
+
+- It should be portable to a Python app environment on Apple iOS.
+
