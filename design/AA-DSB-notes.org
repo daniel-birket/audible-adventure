@@ -4,15 +4,33 @@
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
 #+LATEX_HEADER: \usepackage{parskip}
 #+begin_abstract
-These are Daniel Birket's log and notes on the Audible-Adventure project.
+This is Daniel Birket's log and notes on the Audible-Adventure project.
 #+end_abstract
 * Recent
 
+This section contains recent log entries.
+
+- [2022-08-10 Wed] Initial Commit
+
+  - Read about current practice for python projects and created a
+    bare-bones repository folder structure.
+  - Found original FORTRAN source code from Will Crother and also Don
+    Wood's version. Studied analysis by Dennis Jerz.
+  - Started to study translation to Literate Programming style by Don Wood.
+
 * Log
+
+This section contains archived log entries.
+# Cut/Paste these lines above the recent log entries to archive them.
+
+- End of Log
 
 * Notes
 
 ** Analysis of the Original FORTRAN ADVENT
+
+This section lists references on the original FORTRAN versions of
+ADVENT (ADV) and includes some notes on data structures as I read.
 
 - Don Wood's [[https://jerz.setonhill.edu/intfic/colossal-cave-adventure-source-code/][Source code]]
 - [[http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html#section02][Analysis]] by [[mailto:jerz_at_setonhill_dot_edu][Dennis G. Jerz]], Seton Hill University
