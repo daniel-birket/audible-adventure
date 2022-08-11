@@ -1,0 +1,47 @@
+# See https://orgmode.org
+#+TITLE: Daniel Birket's Notes
+#+SUBTITLE: Audible-Adventure
+#+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LATEX_HEADER: \usepackage{parskip}
+#+begin_abstract
+These are Daniel Birket's log and notes on the Audible-Adventure project.
+#+end_abstract
+* Recent
+
+* Log
+
+* Notes
+
+** Analysis of the Original FORTRAN ADVENT
+
+- Don Wood's [[https://jerz.setonhill.edu/intfic/colossal-cave-adventure-source-code/][Source code]]
+- [[http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html#section02][Analysis]] by [[mailto:jerz_at_setonhill_dot_edu][Dennis G. Jerz]], Seton Hill University
+- [[http://www.literateprogramming.com/adventure.pdf][Literate Translation]] of ADVENT by Don Wood
+
+*** ADVENT Data
+
+Scenes are either a place and/or a condition (you drowned)
+
+- For each scene:
+  - Long Scene Description
+  - Short Scene Description
+  - List Keywords (and its synonyms) to change to another scene
+  - Most movements are object references, not compass points
+- Words
+  - Words have synonym-words and a key-word
+  - Movement Words and synonyms
+  - Object Words and synonyms
+  - Action Words and synonyms
+    - Default response
+  - Message Words
+    - Associated message(s)
+- Objects and Treasures
+  - Name
+- Map Movement
+  - Motion Word
+  - Destination
+  - Condition
+    - Probability
+    - Must have Object in Hand
+    - Object must be Present
+    - Object must have given property

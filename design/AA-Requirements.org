@@ -1,5 +1,5 @@
 #+TITLE: Software Requirements
-#+SUBTITLE: Audible Adventure
+#+SUBTITLE: Audible-Adventure
 #+AUTHOR: Daniel Birket
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
 #+LATEX_HEADER: \usepackage{parskip}
