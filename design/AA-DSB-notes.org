@@ -10,6 +10,12 @@ This is Daniel Birket's log and notes on the Audible-Adventure project.
 
 This section contains recent log entries.
 
+- [2022-08-11 Thu] Reading
+
+  - Read about some audio library, taking notes below
+  - Wrote a message @ spamming several GitHub users with similar interests
+  - Question to LP for his thoughts on sound formats.
+
 - [2022-08-10 Wed] Initial Commit
 
   - Read about current practice for python projects and created a
@@ -63,3 +69,72 @@ Scenes are either a place and/or a condition (you drowned)
     - Must have Object in Hand
     - Object must be Present
     - Object must have given property
+
+** Lucia
+
+I found a 'lucia' folder among my downloaded repositories dated
+2022-03-11. Although I don't remember it, I have apparently run into
+the idea of an audio game engine before, probably while looking for
+stuff of interest to Lawrence.
+
+- [[https://github.com/luciasoftware/lucia]['lucia' repository]]
+
+I have little memory of this and probably never took the time to
+build the docs. At a glance, I have the impression that this is a
+library upon which to build an audio-centric game. The example 'games'
+are very short, one literally a 'Hello World' demo that appear to be
+focused on exercising elements of the library, probably audio.
+
+The development and master branches were abandoned two years ago.
+It appears that they got about as far toward a useful product as I
+realistically expect to get with the audible-adventure exercise.
+
+See https://amerikranian.github.io/Python-guide/game_frameworks.html
+
+** BGT
+
+This appears to be a defunct audio-game script language and engine.
+
+"BGT is a new revolutionary toolkit which allows you to produce your
+own audio games from the ground up, without having any prior knowledge
+of computer programming at all."
+
+"The development of bgt stopped working: since along time ago, the
+development of bgt which is blastbay game toolkit stopped
+working. however, the bgt is not been deleted, you can still code with
+the latest features in version 1.3. but now python will be a good and
+best programming language for games development, but still, good to
+keep it up for a while, bgt!"
+
+"If you are learning bgt and python together, then I recommend you not
+to learn bgt, since you're already learning python, a good nor best
+programming language."
+
+** PySDL2
+
+A pure python ctypes wrapper for Simple DirectMedia Layer. These 'mixer' calls are under
+the PyGame calls for 'mixer'. See https://pysdl2.readthedocs.io/en/0.9.13/tutorial/pygamers.html
+
+| pygame.mixer       | sdl2                                                               |
+|--------------------+--------------------------------------------------------------------|
+| init()             | sdl2.sdlmixer.Mix_Init()                                           |
+| quit()             | sdl2.sdlmixer.Mix_Quit()                                           |
+| get_init()         | No equivalent planned                                              |
+| stop()             | sdl2.sdlmixer.Mix_HaltChannel(),                                   |
+|                    | sdl2.sdlmixer.Mix_HaltGroup(), sdl2.sdlmixer.Mix_HaltMusic()       |
+| pause()            | sdl2.sdlmixer.Mix_Pause(), sdl2.sdlmixer.Mix_PauseMusic()          |
+| unpause()          | sdl2.sdlmixer.Mix_Resume(), sdl2.sdlmixer.Mix_ResumeMusic()        |
+| fadeout()          | sdl2.sdlmixer.Mix_FadeOutChannel(),                                |
+|                    | sdl2.sdlmixer.Mix_FadeOutGroup(), sdl2.sdlmixer.Mix_FadeOutMusic() |
+| set_num_channels() | sdl2.sdlmixer.Mix_AllocateChannels()                               |
+| get_num_channels() | sdl2.sdlmixer.Mix_AllocateChannels()                               |
+| set_reserved()     | sdl2.sdlmixer.Mix_ReserveChannels()                                |
+| find_channel()     | No equivalent planned                                              |
+| get_busy()         | sdl2.sdlmixer.Mix_ChannelFinished()                                |
+| Sound              | sdl2.sdlmixer.Mix_Chunk                                            |
+| Channel            | No equivalent, use the channel functions instead                   |
+
+See https://pysdl2.readthedocs.io/en/0.9.13/modules/sdl2_sdlmixer.html
+for the python wrapper (which has incomplete documentation)
+
+and https://wiki.libsdl.org/SDL_mixer/FrontPage for the complete C library
