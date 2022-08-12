@@ -9,7 +9,7 @@ Welcome to Audible-Adventure, a collaborative project to create an
 accessible Adventure-like game engine and script with an audible
 experience.
 
-I'm sorry that you're come too early to play the game but you're not
+I'm sorry that you've come too early to play the game, but you're not
 too early to help create it. Our team already includes:
 
 - An expert in accessible technology for the blind.
