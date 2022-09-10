@@ -10,6 +10,20 @@ This is Daniel Birket's log and notes on the Audible-Adventure project.
 
 This section contains recent log entries.
 
+- [2022-09-10 Sat] It's been a month?
+
+  - I finally got a moment today and talked with Lawrence about audio
+    libraries. We reviewed my audio library notes and read about some
+    other ones, adding them to the notes. We settled on the PySDL2
+    wrapper for SDL2. It has simple audio playback and mixing
+    functions that we need and has a public domain license. Two other
+    libraries OpenAL and SoundLib/Bass support 3D audio, which are
+    intriguing but too much for this student project and the simple
+    command-line/audio concept.
+
+  - Next moves are to figure out how to install and use the
+    library. We should try some sandbox experiments to learn to use it.
+
 - [2022-08-11 Thu] Reading
 
   - Read about some audio library, taking notes below
@@ -70,7 +84,10 @@ Scenes are either a place and/or a condition (you drowned)
     - Object must be Present
     - Object must have given property
 
-** Lucia
+** Audio Libraries
+This section contains notes and links on some python-compatible audio
+library to consider for this project.
+*** Lucia
 
 I found a 'lucia' folder among my downloaded repositories dated
 2022-03-11. Although I don't remember it, I have apparently run into
@@ -91,26 +108,7 @@ realistically expect to get with the audible-adventure exercise.
 
 See https://amerikranian.github.io/Python-guide/game_frameworks.html
 
-** BGT
-
-This appears to be a defunct audio-game script language and engine.
-
-"BGT is a new revolutionary toolkit which allows you to produce your
-own audio games from the ground up, without having any prior knowledge
-of computer programming at all."
-
-"The development of bgt stopped working: since along time ago, the
-development of bgt which is blastbay game toolkit stopped
-working. however, the bgt is not been deleted, you can still code with
-the latest features in version 1.3. but now python will be a good and
-best programming language for games development, but still, good to
-keep it up for a while, bgt!"
-
-"If you are learning bgt and python together, then I recommend you not
-to learn bgt, since you're already learning python, a good nor best
-programming language."
-
-** PySDL2
+*** PySDL2
 
 A pure python ctypes wrapper for Simple DirectMedia Layer. These 'mixer' calls are under
 the PyGame calls for 'mixer'. See https://pysdl2.readthedocs.io/en/0.9.13/tutorial/pygamers.html
@@ -139,7 +137,7 @@ for the python wrapper (which has incomplete documentation)
 
 and https://wiki.libsdl.org/SDL_mixer/FrontPage for the complete C library
 
-** Bass
+*** Bass
 
 @TheQuinbox recommends Bass and sound_lib over SDL2.
 
@@ -148,7 +146,7 @@ not-for-profit projects like this.
 
 https://www.un4seen.com
 
-** sound_lib
+*** sound_lib
 
 High-level Python Wrapper for Bass library.
 
@@ -156,9 +154,47 @@ https://github.com/accessibleapps/sound_lib
 
 Not a lot of documentation. Will have to read the code.
 
-** FMOD
+*** FMOD
 
 High $ commercial sound framework. Inappropriate for a beginner
 project, but looks very nice.
 
 https://fmod.com
+
+*** Synthizer
+
+[[https://github.com/synthizer/synthizer][Synthizer GitHub]]
+
+Pre 1.0 work in progress. Sounds promising. Read the Read.me.
+
+*** Cytolk
+
+Cython wrapper for the tolk library. Mentions screenreader. This and
+[[https://github.com/dkager/tolk/][Tolk]] appear to be Windows-only.
+[[https://github.com/pauliyobo/cytolk][Cython GitHub]]
+
+*** OpenAL
+
+Open Audio Library
+[[https://openal.org]]
+3D audio imaging with sources and listeners moving in 3D space.
+
+*** BGT
+
+This appears to be a defunct audio-game script language and engine.
+
+"BGT is a new revolutionary toolkit which allows you to produce your
+own audio games from the ground up, without having any prior knowledge
+of computer programming at all."
+
+"The development of bgt stopped working: since a long time ago, the
+development of bgt which is blastbay game toolkit stopped
+working. however, the bgt is not been deleted, you can still code with
+the latest features in version 1.3. but now python will be a good and
+best programming language for games development, but still, good to
+keep it up for a while, bgt!"
+
+"If you are learning bgt and python together, then I recommend you not
+to learn bgt, since you're already learning python, a good or best
+programming language."
+
