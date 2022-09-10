@@ -138,3 +138,27 @@ See https://pysdl2.readthedocs.io/en/0.9.13/modules/sdl2_sdlmixer.html
 for the python wrapper (which has incomplete documentation)
 
 and https://wiki.libsdl.org/SDL_mixer/FrontPage for the complete C library
+
+** Bass
+
+@TheQuinbox recommends Bass and sound_lib over SDL2.
+
+This appears to be a commercial sound library with a free license for
+not-for-profit projects like this.
+
+https://www.un4seen.com
+
+** sound_lib
+
+High-level Python Wrapper for Bass library.
+
+https://github.com/accessibleapps/sound_lib
+
+Not a lot of documentation. Will have to read the code.
+
+** FMOD
+
+High $ commercial sound framework. Inappropriate for a beginner
+project, but looks very nice.
+
+https://fmod.com
