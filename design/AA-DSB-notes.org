@@ -10,6 +10,26 @@ This is Daniel Birket's log and notes on the Audible-Adventure project.
 
 This section contains recent log entries.
 
+- [2022-09-11 Sun] Investigate SDL2 and pySDL2
+
+  I'm reading about SDL2 and how to install it.
+
+  SDL2 is in 'brew'. We need 'sdl2_mixer', which requires 'sdl2'. Easy:
+
+  #+begin_src bash
+    brew install sdl2_mixer
+  #+end_src
+
+  Installed sdl2_mixer, version 2.6.2.
+
+  pySDL2 is in pip. Easy:
+
+  #+begin_src bash
+    pip3 install pySDL2
+  #+end_src
+
+  Installed pySDL2, version 0.9.14 in '/usr/local/lib/python3.10/site-packages'
+
 - [2022-09-10 Sat] It's been a month?
 
   - I finally got a moment today and talked with Lawrence about audio
