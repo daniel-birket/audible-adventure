@@ -4,8 +4,9 @@
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
 #+LATEX_HEADER: \usepackage{parskip}
 #+OPTIONS: toc:nil
+#+STARTUP: overview
 #+begin_abstract
-This document specifies the general requirements of a program to allow
+This document specifies the requirements of a program to allow
 a user to play an "Adventure" game like the classic "Colossal Cave
 Adventure", but with a hybrid audible and textual interface and with
 particular attention to its accessibility by visually-impaired and

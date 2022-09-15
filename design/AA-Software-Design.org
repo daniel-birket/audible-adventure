@@ -1,0 +1,11 @@
+#+TITLE: Software Design
+#+SUBTITLE: Audible-Adventure
+#+AUTHOR: Daniel Birket
+#+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LATEX_HEADER: \usepackage{parskip}
+#+OPTIONS: toc:nil
+#+begin_abstract
+This documents describes the design of software to implement the
+requirements in the [[file:AA-Requirements.org][Software Requirements]] document.
+#+end_abstract
+* Game Data
