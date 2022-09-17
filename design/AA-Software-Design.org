@@ -9,3 +9,7 @@ This documents describes the design of software to implement the
 requirements in the [[file:AA-Requirements.org][Software Requirements]] document.
 #+end_abstract
 * Game Data
+** Location List
+** Synonym List
+** Navigation Map
+** Object List

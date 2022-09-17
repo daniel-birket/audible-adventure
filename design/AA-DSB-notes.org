@@ -10,6 +10,12 @@ This is Daniel Birket's log and notes on the Audible-Adventure project.
 
 This section contains recent log entries.
 
+- [2022-09-15 Thu] First screen share with Lawrence
+
+  - This turned into a long session to repair 'brew' and /usr/local on
+    Lawrence's Mac. That's working again. Brew upgraded everything,
+    even MacTex.
+
 - [2022-09-11 Sun] Investigate SDL2 and pySDL2
 
   I'm reading about SDL2 and how to install it.
