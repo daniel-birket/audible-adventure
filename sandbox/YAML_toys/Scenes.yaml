@@ -1,0 +1,58 @@
+01.EndRoad: !Scene
+  ambient: ''
+  audio: ''
+  description: You are standing at the end of a road before a small brick building.  Around
+    you is a forest.  A small stream flows out of the building and down a gully.
+  summary: at end of road.
+02.HillRoad: !Scene
+  ambient: ''
+  audio: ''
+  description: You have walked up a hill, still in the forest.  The road now slopes
+    back down the other side of the hill.  There is a building in the distance.
+  summary: at hill in road.
+03.WellHouse: !Scene
+  ambient: ''
+  audio: ''
+  description: You are inside a building, a well house for a large spring.
+  summary: inside building.
+04.ValleyStream: !Scene
+  ambient: ''
+  audio: ''
+  description: You are in a valley in the forest beside a stream tumbling along a
+    rocky bed.
+  summary: in a valley.
+05.ForestValley: !Scene
+  ambient: ''
+  audio: ''
+  description: You are in open forest, with a deep valley to one side.
+  summary: in the forest
+06.ForestValleyRoad: !Scene
+  ambient: ''
+  audio: ''
+  description: You are in open forest near both a valley and a road.
+  summary: in the forest
+07.SlitStream: !Scene
+  ambient: ''
+  audio: ''
+  description: At your feet all the water of the stream splashes into a 2 inch slit
+    in the rock. Downstream the streambed is bare rock.
+  summary: at slit in streambed
+08.OutsideGrate: !Scene
+  ambient: ''
+  audio: ''
+  description: You are in a 20 foot depression floored with bare dirt. Set into the
+    dirt is a strong steel grate mounted in concrete. A dry streambed leads into the
+    depression.
+  summary: outside the grate.
+09.BelowGrate: !Scene
+  ambient: ''
+  audio: ''
+  description: You are in a small chamber beneath a 3x3 steel grate to the surface.
+    A low crawl over cobbles leads inward to the west.
+  summary: below the grate.
+10.CobbleCrawl: !Scene
+  ambient: ''
+  audio: ''
+  description: You are crawling over cobbles in a low passage. There is a dim light
+    at the east end of the passage.
+  summary: in cobble crawl.

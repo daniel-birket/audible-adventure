@@ -10,13 +10,25 @@ This is Daniel Birket's log and notes on the Audible-Adventure project.
 
 This section contains recent log entries.
 
-- [2022-09-15 Thu] First screen share with Lawrence
+** [2022-09-27 Tue] Playing with YAML_toy1.py
+
+  - Couldn't sleep, so trying to finish the YAML test program.
+  - Spent enough time to write two YAML toys. One to write a file and
+    one to read it back again. Committing.
+
+
+* Log
+
+This section contains archived log entries.
+# Cut/Paste these lines above the recent log entries to archive them.
+
+** [2022-09-15 Thu] First screen share with Lawrence
 
   - This turned into a long session to repair 'brew' and /usr/local on
     Lawrence's Mac. That's working again. Brew upgraded everything,
     even MacTex.
 
-- [2022-09-11 Sun] Investigate SDL2 and pySDL2
+** [2022-09-11 Sun] Investigate SDL2 and pySDL2
 
   I'm reading about SDL2 and how to install it.
 
@@ -36,7 +48,7 @@ This section contains recent log entries.
 
   Installed pySDL2, version 0.9.14 in '/usr/local/lib/python3.10/site-packages'
 
-- [2022-09-10 Sat] It's been a month?
+** [2022-09-10 Sat] It's been a month?
 
   - I finally got a moment today and talked with Lawrence about audio
     libraries. We reviewed my audio library notes and read about some
@@ -50,24 +62,19 @@ This section contains recent log entries.
   - Next moves are to figure out how to install and use the
     library. We should try some sandbox experiments to learn to use it.
 
-- [2022-08-11 Thu] Reading
+** [2022-08-11 Thu] Reading
 
   - Read about some audio library, taking notes below
   - Wrote a message @ spamming several GitHub users with similar interests
   - Question to LP for his thoughts on sound formats.
 
-- [2022-08-10 Wed] Initial Commit
+** [2022-08-10 Wed] Initial Commit
 
   - Read about current practice for python projects and created a
     bare-bones repository folder structure.
   - Found original FORTRAN source code from Will Crother and also Don
     Wood's version. Studied analysis by Dennis Jerz.
   - Started to study translation to Literate Programming style by Don Wood.
-
-* Log
-
-This section contains archived log entries.
-# Cut/Paste these lines above the recent log entries to archive them.
 
 - End of Log
 
