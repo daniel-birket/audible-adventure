@@ -10,6 +10,18 @@ This is Daniel Birket's log and notes on the Audible-Adventure project.
 
 This section contains recent log entries.
 
+** [2022-10-01 Sat] Work on data structures
+
+I'm trying to start some design notes on game data structures. I'm
+going to open the Don Knuth analysis for ideas.
+
+** [2022-09-28 Wed] Talk with Lawrence
+
+As I recall now, days later, I spent some time on two nights between
+the entry below and this weekend talking with Lawrence. Once to show
+him the YAML toys and another evening to review the pySDL2 code sample
+that he found.
+
 ** [2022-09-27 Tue] Playing with YAML_toy1.py
 
   - Couldn't sleep, so trying to finish the YAML test program.

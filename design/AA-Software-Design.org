@@ -9,7 +9,46 @@ This documents describes the design of software to implement the
 requirements in the [[file:AA-Requirements.org][Software Requirements]] document.
 #+end_abstract
 * Game Data
-** Location List
-** Synonym List
-** Navigation Map
-** Object List
+
+This section outlines the data that defines the game.
+
+** Keyword Dictionary
+
+The keyword dictionary lists the synonyms of the keywords actually
+used by the game logic.  It is defined as a dictionary indexed
+by keyword, each with a list of synonyms.
+
+To speed lookup later, it will be cross-referenced into a synonym
+dictionary, with each entry indexed by synonym and referencing the
+equivalent keyword (or 'None' if the word is already a keyword).
+
+- Filename : keyword_dict.yaml
+- Variable : keyword_dict
+
+#+CAPTION: Example Vocabulary YAML data
+#+begin_src yaml
+  "n": {"north"}
+  "s": {"south"}
+  "e": {"east"}
+  "w": {"west"}
+  "ne": {"northeast"}
+  "se": {"southeast"}
+  "nw": {"northwest"}
+  "sw": {"southwest"}
+  "u": {"up", "upward", "above", "ascend"}
+  "d": {"down", "downward", "below", "descend"}
+  "l": {"left"}
+  "r": {"right"}
+  "in": {"inward", "inside"}
+  "out": {"outward", "outside", "exit", "leave"}
+  "fore": {"forward", "continue", "onward"}
+  "back": {"return", "retreat"}
+#+end_src
+
+** Action Dictionary
+
+** Object Dictionary
+
+** Location Dictionary
+
+** Game Logic
