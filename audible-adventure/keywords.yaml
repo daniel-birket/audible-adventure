@@ -1,0 +1,10 @@
+---
+drop: !Keyword
+  synonyms:
+  - throw
+  - give
+take: !Keyword
+  synonyms:
+  - steal
+  - grab
+...
