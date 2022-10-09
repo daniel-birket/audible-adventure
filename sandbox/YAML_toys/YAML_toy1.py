@@ -63,8 +63,9 @@ def main() -> int:
     print(Scene.dictionary)
 
     with open('Scenes.yaml', 'w') as scene_doc:
+        scene_doc.write('---\n')
         yaml.dump(Scene.dictionary, scene_doc)
-
+        scene_doc.write('...\n')
     return 0
 
 
