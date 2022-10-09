@@ -54,7 +54,9 @@ equivalent keyword (or 'None' if the word is already a keyword).
     - synonyms : list of synonym strings
 
   - Class methods
-    - def make_xref() -> dict
+    - def is_keyword(cls, word: str) -> bool
+    - def is_synonym(cls, word: str) -> bool
+    - def get_keyword(cls, word: str) -> str
 
   - Instance Methods
     - def __init__(self, keyword, synonyms):
