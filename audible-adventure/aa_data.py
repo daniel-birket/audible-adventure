@@ -15,6 +15,13 @@ class Keyword(yaml.YAMLObject):
     keyword_dict = dict()  #: Intern all Keywords in the class's dictionary
     synonym_xref = dict()  #: Cross-reference synonyms to keywords
 
+    # Static methods
+
+    @staticmethod
+    def normalize_word(word: str) -> str:
+        """Remove leading/trailing spaces and make lowercase."""
+        return (word.strip().lower())
+
     # Class methods
 
     @classmethod
@@ -32,18 +39,6 @@ class Keyword(yaml.YAMLObject):
         """Return keyword cooresponding to synonym
         or None if word is not a synonym"""
         return (cls.synonym_xref).get(word, None)
-
-    @classmethod
-    def xref_keyword(cls, keyw: str, synonyms: list):
-        cls.synonym_xref[keyw] = keyw  # keyword is its own synonym
-        for synonym in synonyms:
-            if cls.is_synonym(synonym):  # duplicate synonym?
-                print(
-                    f"Warning: synonym '{synonym}' "
-                    f"in keyword '{cls.synonym_xref[synonym]}' "
-                    f"overwritten by keyword '{keyw}'.\n"
-                )
-            cls.synonym_xref[synonym] = keyw
 
     @classmethod
     def refresh_xref(cls) -> None:
@@ -69,27 +64,44 @@ class Keyword(yaml.YAMLObject):
 
     # Instance methods
 
+    def intern_keyword(self, keyw: str):
+        """Intern the keyword and its synonyms in the keyword dictionary."""
+        cls = type(self)  #: class of self, to access class vars
+
+        if cls.is_keyword(keyw):  # duplicate keyword?
+            old_syn = cls.keyword_dict[keyw].synonyms
+            new_syn = list(set(old_syn.extend(self.synonyms)))
+            cls.keyword_dict[keyw].synonyms = new_syn
+        else:
+            cls.keyword_dict[keyw] = self  # Intern Keyword object
+
+    def xref_keyword(self, keyw: str):
+        """Add the keyword's synonyms to the cross-reference"""
+        cls = type(self)  #: class of self, to access class vars
+
+        cls.synonym_xref[keyw] = keyw  # keyword is its own synonym
+        for syn in self.synonyms:
+            if cls.is_synonym(syn):  # duplicate synonym?
+                print(
+                    f"Warning: synonym '{syn}' "
+                    f"in keyword '{cls.synonym_xref[syn]}' "
+                    f"overwritten by keyword '{keyw}'.\n"
+                )
+            cls.synonym_xref[syn] = keyw
+
     def __init__(self, keyword: str, synonyms: list):
         """Initialize the Keyword class instance attributes,
         intern the new keyword in the class's 'keywords' dictionary and
         crossreference its synonyms in the class's 'synonyms' dictionary.
 
         'synonyms' is a list of unique words."""
-        cls = type(self)  #: class of self, to access class vars
 
-        keyw = keyword.strip().lower()  # Remove any spaces and make lowercase
-        self.synonyms = [s.lower() for s in synonyms]  #: save the list
+        keyw = Keyword.normalize_word(keyword)  # Normalize the word
+        self.synonyms = [Keyword.normalize_word(s) for s in synonyms]
+        self.synonyms = list(set(self.synonyms))  #: list of unique synonyms
 
-        self.synonyms = list(set(self.synonyms))  #: keep only unique words
-
-        if cls.is_keyword(keyw):  # duplicate keyword?
-            old_syn = cls.keyword_dict[keyw].synonyms
-            new_syn = list(set(old_syn.extend(self.synonyms)))
-            cls.keyword_dict[keyw].synonyms = new_syn  # merge sets
-        else:
-            cls.keyword_dict[keyw] = self  # Intern Keyword object
-
-        cls.xref_keyword(keyw, self.synonyms)  # add to the crossreference
+        self.intern_keyword(keyw)  # add to the keyword dictionary
+        self.xref_keyword(keyw)  # add to the crossreference
 
     def __repr__(self) -> str:
         """Create a python representation of the instance."""
@@ -101,6 +113,7 @@ class Keyword(yaml.YAMLObject):
     def __str__(self) -> str:
         """Create a string of the keywords synonyms"""
         return (' '.join(self.synonyms))
+
 
 def main() -> int:
     """TBD main routine returns an integer shell exit code. 0 = ok"""
