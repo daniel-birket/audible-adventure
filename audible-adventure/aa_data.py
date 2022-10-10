@@ -44,50 +44,53 @@ class Keyword(yaml.YAMLObject):
     def refresh_xref(cls) -> None:
         """Refresh the synonym_xref from the keyword_dict."""
         cls.synonym_xref = dict()  # Erase the old xref
-        for keyw in cls.keyword_dict:
-            cls.xref_keyword(keyw, cls.keyword_dict[keyw].synonyms)
+        for k in cls.keyword_dict:
+            cls.keyword_dict[k].xref_keyword()
 
     @classmethod
-    def yaml_load_file(cls, filename: str) -> None:
+    def load_yaml_file(cls, filename: str) -> None:
         """Load keywords from a YAML file."""
         with open(filename, 'r') as keyword_doc:
-            cls.keyword_dict = yaml.load(keyword_doc, Loader=yaml.SafeLoader)
+            keyword_list = yaml.load(keyword_doc, Loader=yaml.SafeLoader)
+            for k in keyword_list:
+                k.intern_keyword()
             cls.refresh_xref()
 
     @classmethod
-    def yaml_dump_file(cls, filename: str) -> None:
+    def dump_yaml_file(cls, filename: str) -> None:
         """Dump keywords to a YAML file."""
         with open(filename, 'w') as keyword_doc:
             keyword_doc.write('---\n')
-            yaml.dump(cls.keyword_dict, keyword_doc)
+            keyword_list = [cls.keyword_dict[k] for k in cls.keyword_dict]
+            yaml.dump(keyword_list, keyword_doc)
             keyword_doc.write('...\n')
 
     # Instance methods
 
-    def intern_keyword(self, keyw: str):
+    def intern_keyword(self):
         """Intern the keyword and its synonyms in the keyword dictionary."""
         cls = type(self)  #: class of self, to access class vars
 
-        if cls.is_keyword(keyw):  # duplicate keyword?
-            old_syn = cls.keyword_dict[keyw].synonyms
+        if cls.is_keyword(self.keyword):  # duplicate keyword?
+            old_syn = cls.keyword_dict[self.keyword].synonyms
             new_syn = list(set(old_syn.extend(self.synonyms)))
-            cls.keyword_dict[keyw].synonyms = new_syn
+            cls.keyword_dict[self.keyword].synonyms = new_syn
         else:
-            cls.keyword_dict[keyw] = self  # Intern Keyword object
+            cls.keyword_dict[self.keyword] = self  # Intern Keyword object
 
-    def xref_keyword(self, keyw: str):
+    def xref_keyword(self):
         """Add the keyword's synonyms to the cross-reference"""
         cls = type(self)  #: class of self, to access class vars
 
-        cls.synonym_xref[keyw] = keyw  # keyword is its own synonym
+        cls.synonym_xref[self.keyword] = self.keyword  # keyword is a synonym
         for syn in self.synonyms:
             if cls.is_synonym(syn):  # duplicate synonym?
                 print(
                     f"Warning: synonym '{syn}' "
                     f"in keyword '{cls.synonym_xref[syn]}' "
-                    f"overwritten by keyword '{keyw}'.\n"
+                    f"overwritten by keyword '{self.keyword}'.\n"
                 )
-            cls.synonym_xref[syn] = keyw
+            cls.synonym_xref[syn] = self.keyword
 
     def __init__(self, keyword: str, synonyms: list):
         """Initialize the Keyword class instance attributes,
@@ -96,23 +99,20 @@ class Keyword(yaml.YAMLObject):
 
         'synonyms' is a list of unique words."""
 
-        keyw = Keyword.normalize_word(keyword)  # Normalize the word
+        self.keyword = Keyword.normalize_word(keyword)  #: Normalized keyword
         self.synonyms = [Keyword.normalize_word(s) for s in synonyms]
         self.synonyms = list(set(self.synonyms))  #: list of unique synonyms
 
-        self.intern_keyword(keyw)  # add to the keyword dictionary
-        self.xref_keyword(keyw)  # add to the crossreference
+        self.intern_keyword()  # add to the keyword dictionary
+        self.xref_keyword()  # add to the crossreference
 
     def __repr__(self) -> str:
         """Create a python representation of the instance."""
         return (
             f"{type(self).__name__}("
+            f"keyword = {self.keyword!r}, "
             f"synonyms = {self.synonyms!r})"
         )
-
-    def __str__(self) -> str:
-        """Create a string of the keywords synonyms"""
-        return (' '.join(self.synonyms))
 
 
 def main() -> int:

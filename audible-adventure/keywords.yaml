@@ -1,10 +1,16 @@
 ---
-drop: !Keyword
+- !Keyword
+  keyword: u
   synonyms:
-  - throw
-  - give
-take: !Keyword
+  - above
+  - upward
+  - ascend
+  - up
+- !Keyword
+  keyword: d
   synonyms:
-  - steal
-  - grab
+  - below
+  - downward
+  - down
+  - descend
 ...
