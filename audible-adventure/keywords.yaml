@@ -1,0 +1,16 @@
+---
+- !Keyword
+  keyword: u
+  synonyms:
+  - above
+  - upward
+  - ascend
+  - up
+- !Keyword
+  keyword: d
+  synonyms:
+  - below
+  - downward
+  - down
+  - descend
+...

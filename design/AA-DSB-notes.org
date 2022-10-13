@@ -10,6 +10,14 @@ This is Daniel Birket's log and notes on the Audible-Adventure project.
 
 This section contains recent log entries.
 
+** [2022-10-09 Sun] Continued work on the Keyword class
+
+Keyword class is now dumping and loading YAML keyword : synonym lists.
+
+** [2022-10-08 Sat] Return to data structures
+
+I've got a few coherent quiet minutes to spend on data again.
+
 ** [2022-10-01 Sat] Work on data structures
 
 I'm trying to start some design notes on game data structures. I'm

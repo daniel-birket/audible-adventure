@@ -45,6 +45,29 @@ equivalent keyword (or 'None' if the word is already a keyword).
   "back": {"return", "retreat"}
 #+end_src
 
+- class Keyword(yaml.YAMLObject)
+  - yaml_tag = "!Keyword"
+  - yaml_loader = yaml.loader.SafeLoader
+  - dictionary : class variable containing all keywords
+  - attributes :
+    - keyword : keyword string
+    - synonyms : list of synonym strings
+
+  - Class methods
+    - def is_keyword(cls, word: str) -> bool
+    - def is_synonym(cls, word: str) -> bool
+    - def get_keyword(cls, word: str) -> str
+
+  - Instance Methods
+    - def __init__(self, keyword, synonyms):
+    - def __repr__(self):
+
+- class Synonym
+  - attributes:
+    - synonym (dictionary key)
+    - keyword
+
+
 ** Action Dictionary
 
 ** Object Dictionary
