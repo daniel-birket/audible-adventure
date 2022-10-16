@@ -1,4 +1,4 @@
-#!/python3
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 """An accessible Adventure-like game with text and audio"""
 
