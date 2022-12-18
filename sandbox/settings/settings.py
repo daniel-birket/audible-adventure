@@ -91,6 +91,16 @@ def load_font_size():
     font_size = int(file.read())
     file.close()
 
+def load_sr_delay():
+    """Read the sleep delay (in milliseconds)from the file 'srDelay.var' and set the
+    global setting slp."""
+
+    global slp  # global delay setting
+
+    file = open("./srDelay.var", "r")  # can use with open here
+    slp = int(file.read())
+    slp = slp/1000
+    file.close()
 
 def printdelay(s):
     """Print an object with a pause before and after printing."""
@@ -102,8 +112,8 @@ def printdelay(s):
     sleep(slp)
 
 
-def savesettings():
-    """Ask the user for input and save it to the settings file."""
+def save_font_size():
+    """Ask the user for input and save it to the font size settings file."""
 
     newsize = input("Type in new font size: ")
 
@@ -113,16 +123,32 @@ def savesettings():
 
     printdelay("Saved!")
 
+def save_sr_delay():
+    """Ask the user for input and save it to the screen reader delay settings file."""
+
+    newsleep = input("Type a new sleep delay you wish to use. ")
+
+    file = open("./srDelay.var", "w")  # can use with open here
+    file.write(newsleep)
+    file.close()
+
+    printdelay("Saved!")
+
+
 
 def main():
 
     with open("fontSize.var", "w") as f:
         f.write("12")
+    with open("srDelay.var", "w") as f:
+        f.write("200")
 
     while True:
+        load_sr_delay()
         load_font_size()
-        printdelay(f"Font Size is {font_size}")
-        savesettings()
+        printdelay(f"Font Size is {font_size}, and sleep is {slp}")
+        save_font_size()
+        save_sr_delay()
     # exit unreachable due to 'while True' above. Use control-C.
 
 
