@@ -45,7 +45,7 @@ def soundquit():
 
                            
 
-playfile=soundinit("/home/lawrence/Downloads/computer-keyboard-1.wav")
+playfile=soundinit("1.wav")
 play(playfile)
 soundquit()
     
