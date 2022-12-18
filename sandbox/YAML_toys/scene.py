@@ -7,6 +7,7 @@ import yaml
 
 class Scene(yaml.YAMLObject):
     """Describe a scene of the game: a place or a state, like 'dead'."""
+
     yaml_tag = "!Scene"  #: Use class name as YAML type
     yaml_loader = yaml.loader.SafeLoader  #: This type is safe to load
     dictionary = dict()  #: Intern all Scenes in the class's dictionary
