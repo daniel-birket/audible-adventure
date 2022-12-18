@@ -31,6 +31,8 @@ and invoke it with
 
 > black <file or folder>
 
+'Note from Lawrence: Linux needs black to be installed with sudo privileges to be found.'
+
 Black will reformat your source code in place, fixing any whitespace
 issues and anything else that doesn't meet it's uncompromising
 standard. Black reformatted this file and fixed these four issues:
@@ -91,6 +93,7 @@ def load_font_size():
     font_size = int(file.read())
     file.close()
 
+
 def load_sr_delay():
     """Read the sleep delay (in milliseconds)from the file 'srDelay.var' and set the
     global setting slp."""
@@ -99,8 +102,9 @@ def load_sr_delay():
 
     file = open("./srDelay.var", "r")  # can use with open here
     slp = int(file.read())
-    slp = slp/1000
+    slp = slp / 1000
     file.close()
+
 
 def printdelay(s):
     """Print an object with a pause before and after printing."""
@@ -123,6 +127,7 @@ def save_font_size():
 
     printdelay("Saved!")
 
+
 def save_sr_delay():
     """Ask the user for input and save it to the screen reader delay settings file."""
 
@@ -133,7 +138,6 @@ def save_sr_delay():
     file.close()
 
     printdelay("Saved!")
-
 
 
 def main():
